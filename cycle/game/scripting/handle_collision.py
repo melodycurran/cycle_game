@@ -35,18 +35,14 @@ class HandleCollisionsAction(Action):
         Args:
             cast (Cast): The cast of Actors in the game.
         """
-            
         cycle1 = cast.get_first_actor("cycle1")
-        trail1 = cycle1.get_segments()
-
         cycle2 = cast.get_first_actor("cycle2")
-        trail2 = cycle2.get_segments()
-
-        for segment in trail1:
-            for segment_ in trail2:
+        segments1 = cycle1.get_segments()
+        segments2 = cycle2.get_segments()
+        
+        for segment in segments1:
+            for segment_ in segments2:
                 if segment.get_position().equals(segment_.get_position()):
-                    self._is_game_over = True
-                elif segment_.get_position().equals(segment.get_position()):
                     self._is_game_over = True
 
     def _handle_game_over(self, cast):
@@ -74,4 +70,3 @@ class HandleCollisionsAction(Action):
                 segment.set_color(constants.WHITE)
             for segment in segments2:
                 segment.set_color(constants.WHITE)
-            

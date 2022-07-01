@@ -1,7 +1,6 @@
 from game.casting.cycle import Cycle
 from game.casting.cycle2 import AnotherCycle
 from game.casting.cast import Cast
-from game.casting.score import Score
 from game.services.keyboard_service import KeyboardService
 from game.services.video_service import VideoService
 from game.scripting.script import Script
@@ -17,7 +16,6 @@ def main():
     cast = Cast()
     cast.add_actor("cycle1", Cycle())
     cast.add_actor("cycle2", AnotherCycle())
-    cast.add_actor("scores", Score())
 
     keyboard_service = KeyboardService()
     video_service = VideoService()
