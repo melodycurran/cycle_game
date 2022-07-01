@@ -68,10 +68,3 @@ class Cycle(Actor):
             segment.set_color(color)
             self._segments.append(segment)
             
-    def get_points(self):
-        """Gets the points.
-        
-        Returns:
-            points (int): The points.
-        """
-        return self._points
